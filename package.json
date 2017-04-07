@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"stylint",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "stylint",
+    "description": "api documentation for [stylint (v1.5.9)](https://github.com/SimenB/stylint#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-stylint.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-stylint) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-stylint.svg)](https://travis-ci.org/npmdoc/node-npmdoc-stylint)",
     "devDependencies": {
-        "stylint": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "stylint": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-stylint",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-stylint",
+    "keywords": [
+        "documentation",
+        "stylint"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_stylint.js",
+    "name": "npmdoc-stylint",
+    "nameAlias": "npmdoc_stylint",
+    "nameOriginal": "npmdoc-stylint",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-stylint"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
