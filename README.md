@@ -1,9 +1,14 @@
-# api documentation for  [stylint (v1.5.9)](https://github.com/SimenB/stylint#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-stylint.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-stylint) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-stylint.svg)](https://travis-ci.org/npmdoc/node-npmdoc-stylint)
+# npmdoc-stylint
+
+#### api documentation for  [stylint (v1.5.9)](https://github.com/SimenB/stylint#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-stylint.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-stylint) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-stylint.svg)](https://travis-ci.org/npmdoc/node-npmdoc-stylint)
+
 #### A linter for stylus
 
-[![NPM](https://nodei.co/npm/stylint.png?downloads=true)](https://www.npmjs.com/package/stylint)
+[![NPM](https://nodei.co/npm/stylint.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/stylint)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-stylint/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-stylint_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-stylint/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-stylint/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-stylint/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-stylint/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-stylint/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-stylint/build/screenCapture.npmPackageListing.svg)
 
@@ -77,21 +82,17 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "rpatton",
-            "email": "rosspatton2@gmail.com"
+            "name": "rpatton"
         },
         {
-            "name": "simenb",
-            "email": "sbekkhus91@gmail.com"
+            "name": "simenb"
         },
         {
-            "name": "wojciechczerniak",
-            "email": "wojciech.czerniak@gmail.com"
+            "name": "wojciechczerniak"
         }
     ],
     "name": "stylint",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/SimenB/stylint.git"
@@ -108,16 +109,6 @@
     "version": "1.5.9"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module stylint](#apidoc.module.stylint)
-
-
-
-# <a name="apidoc.module.stylint"></a>[module stylint](#apidoc.module.stylint)
 
 
 
