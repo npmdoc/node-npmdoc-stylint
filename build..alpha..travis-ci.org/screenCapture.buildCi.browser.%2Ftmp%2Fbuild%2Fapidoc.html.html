@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/SimenB/stylint#readme"
-
-    >stylint (v1.5.9)</a>
+    <a href="https://github.com/SimenB/stylint#readme">stylint (v1.5.9)</a>
 </h1>
 <h4>A linter for stylus</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.stylint">module stylint</a><ol>
 
@@ -87,23 +80,23 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">stylint = function ( path, config, callback ) {
 	return stampit().compose(
-		require( &#x27;./src/core/&#x27; ),
-		require( &#x27;./src/checks/&#x27; ),
-		require( &#x27;./src/state/&#x27; ),
+		require( './src/core/' ),
+		require( './src/checks/' ),
+		require( './src/state/' ),
 		stampit().enclose( function() {
 			var pkg = null
 			try {
-				pkg = require( process.cwd() + &#x27;/package.json&#x27; )
+				pkg = require( process.cwd() + '/package.json' )
 			}
 			catch ( err ) {
 				// no output
 			}
 
 			// set safe path defaults
-			if ( typeof path === &#x27;undefined&#x27; ) {
-				this.state.path = &#x27;./&#x27;
+			if ( typeof path === 'undefined' ) {
+				this.state.path = './'
 			}
-			else if ( path instanceof Array || typeof path === &#x27;string&#x27; ) {
+			else if ( path instanceof Array || typeof path === 'string' ) {
 				this.state.path = path
 			}
 
@@ -111,17 +104,17 @@
 			// for ignoring specific files
 			// first look in package.json
 			// then look for .stylintignore in the main dir
-			if ( pkg !== null &#x26;&#x26;
-					typeof pkg.stylintignore !== &#x27;undefined&#x27; &#x26;&#x26;
+			if ( pkg !== null &amp;&amp;
+					typeof pkg.stylintignore !== 'undefined' &amp;&amp;
 					pkg.stylintignore instanceof Array ) {
 				this.state.exclude = pkg.stylintignore
 			}
 			else {
 				try {
-					var stylintIgnore = fs.readFileSync( process.cwd() + &#x27;/.stylintignore&#x27; )
+					var stylintIgnore = fs.readFileSync( process.cwd() + '/.stylintignore' )
 					this.state.exclude = stylintIgnore
 						.toString()
-						.split( &#x27;\n&#x27; )
+						.split( '\n' )
 						.filter( function( d ) {
 							return d
 						} )
@@ -131,9 +124,9 @@
 				}
 			}
 
-			this.customConfig = typeof config === &#x27;object&#x27; ? config : false
+			this.customConfig = typeof config === 'object' ? config : false
 			this.callback = callback || function() {}
-		} ).enclose( require( &#x27;./src/core/init&#x27; ) )
+		} ).enclose( require( './src/core/init' ) )
 	)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -148,3 +141,4 @@
     ]
 </div>
 </div>
+</body></html>

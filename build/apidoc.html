@@ -61,12 +61,84 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.stylint">module stylint</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stylint.stylint">
+            function <span class="apidocSignatureSpan"></span>stylint
+            <span class="apidocSignatureSpan">( path, config, callback )</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.stylint" id="apidoc.module.stylint">module stylint</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stylint.stylint" id="apidoc.element.stylint.stylint">
+        function <span class="apidocSignatureSpan"></span>stylint
+        <span class="apidocSignatureSpan">( path, config, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stylint = function ( path, config, callback ) {
+	return stampit().compose(
+		require( &#x27;./src/core/&#x27; ),
+		require( &#x27;./src/checks/&#x27; ),
+		require( &#x27;./src/state/&#x27; ),
+		stampit().enclose( function() {
+			var pkg = null
+			try {
+				pkg = require( process.cwd() + &#x27;/package.json&#x27; )
+			}
+			catch ( err ) {
+				// no output
+			}
+
+			// set safe path defaults
+			if ( typeof path === &#x27;undefined&#x27; ) {
+				this.state.path = &#x27;./&#x27;
+			}
+			else if ( path instanceof Array || typeof path === &#x27;string&#x27; ) {
+				this.state.path = path
+			}
+
+			// look for a stylintignore array
+			// for ignoring specific files
+			// first look in package.json
+			// then look for .stylintignore in the main dir
+			if ( pkg !== null &#x26;&#x26;
+					typeof pkg.stylintignore !== &#x27;undefined&#x27; &#x26;&#x26;
+					pkg.stylintignore instanceof Array ) {
+				this.state.exclude = pkg.stylintignore
+			}
+			else {
+				try {
+					var stylintIgnore = fs.readFileSync( process.cwd() + &#x27;/.stylintignore&#x27; )
+					this.state.exclude = stylintIgnore
+						.toString()
+						.split( &#x27;\n&#x27; )
+						.filter( function( d ) {
+							return d
+						} )
+				}
+				catch ( err ) {
+					// do no-thing
+				}
+			}
+
+			this.customConfig = typeof config === &#x27;object&#x27; ? config : false
+			this.callback = callback || function() {}
+		} ).enclose( require( &#x27;./src/core/init&#x27; ) )
+	)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
